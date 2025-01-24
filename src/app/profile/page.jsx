@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 const Profile = async () => {
   const { isAuthenticated, getUser } = useAuth();
   const user = await getUser();
-  const {  family_name, given_name,  } = user;
+  const { family_name, given_name } = user || {};
 
   return (await isAuthenticated()) ? (
     <div className="py-16 bg-[#a8d63da4] px-16 ">
